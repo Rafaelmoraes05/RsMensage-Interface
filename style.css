@@ -1,0 +1,226 @@
+/* Estilo geral para PC */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.message-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.25rem;
+    color: #333333;
+    min-height: 60px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1.5s ease-out forwards;
+}
+
+.message span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: typewriter 0.05s forwards;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #ff1493;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff69b4;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;  /* Espaço entre os itens */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem; /* Tamanho maior para o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #ffdeea; /* Cor de destaque no hover */
+}
+
+/* Estilo da página de Mensagens Lidas */
+.mensagens-lidas-container {
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.mensagem-lida {
+    background-color: #fafafa;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem-lida small {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between; /* Alinha logo e links */
+        align-items: center; /* Centraliza verticalmente */
+        width: 92%;
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: row; /* Alinha os links na horizontal */
+        align-items: center;
+        gap: 10px; /* Espaçamento entre os itens */
+    }
+
+    .navbar-links li {
+        margin: 0; /* Remove margens verticais */
+    }
+
+    .container {
+        width: 80%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 6px 12px;
+    }
+
+    .navbar-container {
+        padding: 0 10px; /* Ajuste de padding para telas bem pequenas */
+    }
+}

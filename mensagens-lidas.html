@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens Lidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">RsMensage</a>
+            <ul class="navbar-links">
+                <li>
+                    <a href="/mensagens-lidas.html" class="navbar-icon">
+                        <i class="fas fa-envelope"></i> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="container">
+        <h1 class="title">Mensagens Lidas</h1>
+        <div id="mensagensLidas" class="mensagens-lidas-container">
+            <!-- As mensagens lidas serão carregadas aqui -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            carregarMensagensLidas();
+        });
+
+        function carregarMensagensLidas() {
+            fetch("http://localhost:8080/mensagens/lidas")
+                .then(response => response.json())
+                .then(data => {
+                    const mensagensContainer = document.getElementById("mensagensLidas");
+                    if (data.length === 0) {
+                        mensagensContainer.innerHTML = "<p>Nenhuma mensagem lida ainda.</p>";
+                    } else {
+                        data.forEach(mensagem => {
+                            const mensagemElement = document.createElement("div");
+                            mensagemElement.classList.add("mensagem-lida");
+                            mensagemElement.innerHTML = `<p>${mensagem.texto}</p><small>Lida em: ${mensagem.dataLeitura}</small>`;
+                            mensagensContainer.appendChild(mensagemElement);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar mensagens lidas:", error);
+                    document.getElementById("mensagensLidas").innerHTML = "<p>Ocorreu um erro. Tente novamente mais tarde.</p>";
+                });
+        }
+    </script>
+</body>
+</html>
