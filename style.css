@@ -101,7 +101,7 @@ body {
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;  /* Espaço entre os itens */
+    justify-content: space-between;  
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -132,7 +132,7 @@ body {
 .navbar-links a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem; /* Tamanho maior para o ícone */
+    font-size: 1.2rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,10 +140,9 @@ body {
 }
 
 .navbar-links a:hover {
-    color: #ffdeea; /* Cor de destaque no hover */
+    color: #ffdeea; 
 }
 
-/* Estilo da página de Mensagens Lidas */
 .mensagens-lidas-container {
     text-align: left;
     margin-top: 20px;
@@ -181,8 +180,8 @@ body {
 
     .navbar-container {
         display: flex;
-        justify-content: space-between; /* Alinha logo e links */
-        align-items: center; /* Centraliza verticalmente */
+        justify-content: space-between; 
+        align-items: center; 
         width: 92%;
     }
 
@@ -192,13 +191,13 @@ body {
 
     .navbar-links {
         display: flex;
-        flex-direction: row; /* Alinha os links na horizontal */
+        flex-direction: row; 
         align-items: center;
-        gap: 10px; /* Espaçamento entre os itens */
+        gap: 10px; 
     }
 
     .navbar-links li {
-        margin: 0; /* Remove margens verticais */
+        margin: 0; 
     }
 
     .container {
@@ -221,6 +220,6 @@ body {
     }
 
     .navbar-container {
-        padding: 0 10px; /* Ajuste de padding para telas bem pequenas */
+        padding: 0 10px; 
     }
 }

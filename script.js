@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function fetchMensagemDoDia() {
-        fetch("http://localhost:8080/mensagens/dia")
+        fetch("https://rsmensage.onrender.com/mensagens/dia")
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function marcarMensagemComoLida(id) {
-        fetch(`http://localhost:8080/mensagens/lidas`, {
+        fetch(`https://rsmensage.onrender.com/mensagens/lidas`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
