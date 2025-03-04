@@ -34,7 +34,7 @@
         });
 
         function carregarMensagensLidas() {
-            fetch("http://localhost:8080/mensagens/lidas")
+            fetch("https://rsmensage.onrender.com/mensagens/lidas")
                 .then(response => response.json())
                 .then(data => {
                     const mensagensContainer = document.getElementById("mensagensLidas");
